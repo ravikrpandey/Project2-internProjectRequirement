@@ -192,7 +192,7 @@ let collegeDetails = async (req, res) => {
     }
 
     let id = specificCollege._id.toString();
-    let intern = await internModel.find({ collegeId: id, isDeleted: false });
+    let intern = await internModel.find({ collegeId: id, isDeleted: false }).select({_id:1,name:1,email:1,});
 
     if (!isValidrequestBody(intern)) {
       return res
