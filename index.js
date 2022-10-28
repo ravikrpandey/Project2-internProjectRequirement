@@ -1,5 +1,6 @@
 const express = require('express');
 var bodyParser = require('body-parser');
+const cors = require('cors');
 
 const route = require('./src/route/route');
 
@@ -9,6 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 mongoose.connect("mongodb+srv://group55:3SlxkwNnRns1af2q@cluster0.rahvcmm.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true
